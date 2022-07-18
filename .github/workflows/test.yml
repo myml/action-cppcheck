@@ -1,16 +1,11 @@
-name: backup to gitlab
+name: test
 on: [push]
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
 
 jobs:
-  backup-to-gitlab:
-    name: backup-to-gitlab
+  test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Install Client
         run: |
           echo "::warning file=action.yml,line=1,col=5,endColumn=7::Missing semicolon"
